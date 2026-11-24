@@ -41,35 +41,32 @@
       text-transform: uppercase;
     }
 
-    /* Lista Programma in ordine esatto con allineamento differenziato */
+    /* Lista Programma: ordine esatto dall'alto in basso con allineamento Sx / Dx / Centro */
     .programma-lista {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
     }
 
     .brano-item {
       max-width: 65%;
     }
 
-    /* Coro a sinistra */
     .brano-coro {
       align-self: flex-start;
       text-align: left;
     }
 
-    /* Organo a destra */
     .brano-organo {
       align-self: flex-end;
       text-align: right;
     }
 
-    /* Finale al centro */
     .brano-insieme {
       align-self: center;
       text-align: center;
       max-width: 85%;
-      margin-top: 14px;
+      margin-top: 16px;
       padding-top: 24px;
       border-top: 1px solid var(--border);
     }
@@ -97,7 +94,7 @@
       margin-top: 2px;
     }
 
-    /* Separatore tra Programma ed Ensemble */
+    /* Separatore tra le due pagine del PDF */
     hr.section-divider {
       border: 0;
       border-top: 1px solid var(--border);
@@ -115,7 +112,7 @@
       letter-spacing: 0.04em;
     }
 
-    /* Griglia Organico: Voci separate da Organista e Direttore */
+    /* Organico: ordine identico alla pagina 2 del PDF, separato tra Voci e Organista/Direttore */
     .organico-wrapper {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -170,7 +167,6 @@
       opacity: 0.92;
     }
 
-    /* Adattamento smartphone */
     @media (max-width: 600px) {
       .container {
         padding: 28px 20px;
@@ -263,13 +259,11 @@
 
     <hr class="section-divider">
 
-    <!-- Presentazione Ensemble -->
     <p class="bio">
       <strong>HERMANN ENSEMBLE</strong> è un gruppo amatoriale comprensivo di ensemble vocale e organo. Nasce da giovani accomunati dalla passione per la musica e il canto corale, per alcuni anche oggetto di studio accademico.<br>
       Le scelte artistiche di repertorio alternano soprattutto brani di tradizione popolare ad altri d'epoca rinascimentale e barocca; tuttavia, propongono anche opere d'autori moderni e contemporanei capaci di esprimere un legame vivo con le radici storiche della propria musica.
     </p>
 
-    <!-- Organico separato tra Voci e Organista/Direttore -->
     <div class="organico-wrapper">
       <div class="voci-grid">
         <div class="ruolo">
@@ -278,13 +272,13 @@
         </div>
 
         <div class="ruolo">
-          <h3>TENORI</h3>
-          <p>Alessandro Decursu<br>Giacomo Tessera<br>Matteo Trimarchi</p>
+          <h3>CONTRALTI</h3>
+          <p>Giulia Pellicciotta<br>Beatrice Radice<br>Anna Tomatis</p>
         </div>
 
         <div class="ruolo">
-          <h3>CONTRALTI</h3>
-          <p>Giulia Pellicciotta<br>Beatrice Radice<br>Anna Tomatis</p>
+          <h3>TENORI</h3>
+          <p>Alessandro Decursu<br>Giacomo Tessera<br>Matteo Trimarchi</p>
         </div>
 
         <div class="ruolo">
