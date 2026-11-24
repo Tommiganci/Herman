@@ -23,10 +23,10 @@
     }
 
     .container {
-      max-width: 780px;
+      max-width: 720px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 40px 32px;
+      padding: 40px 36px;
       border-radius: 6px;
       box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
     }
@@ -37,31 +37,41 @@
       font-size: 1.75rem;
       letter-spacing: 0.12em;
       font-weight: normal;
-      margin: 0 0 32px 0;
+      margin: 0 0 36px 0;
       text-transform: uppercase;
     }
 
-    /* Sezione Programma: 2 colonne + finale centrato */
-    .programma-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-
-    .colonna-programma {
+    /* Lista Programma in ordine esatto con allineamento differenziato */
+    .programma-lista {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-    }
-
-    .colonna-organo {
-      border-left: 1px solid var(--border);
-      padding-left: 32px;
+      gap: 22px;
     }
 
     .brano-item {
-      margin: 0;
+      max-width: 65%;
+    }
+
+    /* Coro a sinistra */
+    .brano-coro {
+      align-self: flex-start;
+      text-align: left;
+    }
+
+    /* Organo a destra */
+    .brano-organo {
+      align-self: flex-end;
+      text-align: right;
+    }
+
+    /* Finale al centro */
+    .brano-insieme {
+      align-self: center;
+      text-align: center;
+      max-width: 85%;
+      margin-top: 14px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
     }
 
     .autore {
@@ -74,7 +84,7 @@
     }
 
     .titolo {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: bold;
       display: block;
     }
@@ -85,13 +95,6 @@
       color: var(--muted);
       display: block;
       margin-top: 2px;
-    }
-
-    .brano-finale {
-      text-align: center;
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
     }
 
     /* Separatore tra Programma ed Ensemble */
@@ -168,21 +171,17 @@
     }
 
     /* Adattamento smartphone */
-    @media (max-width: 640px) {
+    @media (max-width: 600px) {
       .container {
         padding: 28px 20px;
       }
 
-      .programma-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+      .brano-item {
+        max-width: 85%;
       }
 
-      .colonna-organo {
-        border-left: none;
-        border-top: 1px solid var(--border);
-        padding-left: 0;
-        padding-top: 24px;
+      .brano-insieme {
+        max-width: 100%;
       }
 
       .organico-wrapper {
@@ -209,64 +208,57 @@
   <div class="container">
     <h1>PROGRAMMA</h1>
 
-    <div class="programma-grid">
-      <!-- Colonna Sinistra: Brani Corali -->
-      <div class="colonna-programma">
-        <div class="brano-item">
-          <span class="autore">VLODYMYR YAKYMETS (1974*)</span>
-          <span class="titolo">Precistaia diva</span>
-        </div>
-
-        <div class="brano-item">
-          <span class="autore">GUSTAV HOLST (1874-1934)</span>
-          <span class="titolo">Lullay my liking</span>
-        </div>
-
-        <div class="brano-item">
-          <span class="autore">BRUNO BETTINELLI (1913-2004)</span>
-          <span class="titolo">Ninna nanna del bambin Gesù</span>
-          <span class="sottotitolo">da Tre canti popolari lombardi</span>
-        </div>
-
-        <div class="brano-item">
-          <span class="autore">Arr. ERNEST CERVERA (1891-1972)</span>
-          <span class="titolo">El noi de la mare</span>
-        </div>
-
-        <div class="brano-item">
-          <span class="autore">ANONIMO</span>
-          <span class="titolo">Campanas de Belèn</span>
-        </div>
+    <div class="programma-lista">
+      <div class="brano-item brano-coro">
+        <span class="autore">VLODYMYR YAKYMETS (1974*)</span>
+        <span class="titolo">Precistaia diva</span>
       </div>
 
-      <!-- Colonna Destra: Brani per Organo -->
-      <div class="colonna-programma colonna-organo">
-        <div class="brano-item">
-          <span class="autore">GIROLAMO FRESCOBALDI (1583-1648)</span>
-          <span class="titolo">Hinno Ave Maris Stella</span>
-        </div>
-
-        <div class="brano-item">
-          <span class="autore">ARCANGELO CORELLI (1653-1713)</span>
-          <span class="titolo">Pastorale</span>
-        </div>
-
-        <div class="brano-item">
-          <span class="autore">DOMENICO ZIPOLI (1688)</span>
-          <span class="titolo">Pastorale</span>
-        </div>
-
-        <div class="brano-item">
-          <span class="autore">LOUIS-CLAUDE DAQUIN (1694-1772)</span>
-          <span class="titolo">Noel Etranger sur les jeaux d'anches sans tremblant en duo</span>
-        </div>
+      <div class="brano-item brano-coro">
+        <span class="autore">GUSTAV HOLST (1874-1934)</span>
+        <span class="titolo">Lullay my liking</span>
       </div>
-    </div>
 
-    <!-- Brano Finale d'Insieme al Centro -->
-    <div class="brano-finale">
-      <span class="autore">FELIX MENDELSSOHN (1809-1847), arr. DAVID WILLCOCKS (1919-2013)</span>
-      <span class="titolo">Hark! The herald angels sing</span>
+      <div class="brano-item brano-coro">
+        <span class="autore">BRUNO BETTINELLI (1913-2004)</span>
+        <span class="titolo">Ninna nanna del bambin Gesù</span>
+        <span class="sottotitolo">da Tre canti popolari lombardi</span>
+      </div>
+
+      <div class="brano-item brano-coro">
+        <span class="autore">Arr. ERNEST CERVERA (1891-1972)</span>
+        <span class="titolo">El noi de la mare</span>
+      </div>
+
+      <div class="brano-item brano-coro">
+        <span class="autore">ANONIMO</span>
+        <span class="titolo">Campanas de Belèn</span>
+      </div>
+
+      <div class="brano-item brano-organo">
+        <span class="autore">GIROLAMO FRESCOBALDI (1583-1648)</span>
+        <span class="titolo">Hinno Ave Maris Stella</span>
+      </div>
+
+      <div class="brano-item brano-organo">
+        <span class="autore">ARCANGELO CORELLI (1653-1713)</span>
+        <span class="titolo">Pastorale</span>
+      </div>
+
+      <div class="brano-item brano-organo">
+        <span class="autore">DOMENICO ZIPOLI (1688)</span>
+        <span class="titolo">Pastorale</span>
+      </div>
+
+      <div class="brano-item brano-organo">
+        <span class="autore">LOUIS-CLAUDE DAQUIN (1694-1772)</span>
+        <span class="titolo">Noel Etranger sur les jeaux d'anches sans tremblant en duo</span>
+      </div>
+
+      <div class="brano-item brano-insieme">
+        <span class="autore">FELIX MENDELSSOHN (1809-1847), arr. DAVID WILLCOCKS (1919-2013)</span>
+        <span class="titolo">Hark! The herald angels sing</span>
+      </div>
     </div>
 
     <hr class="section-divider">
