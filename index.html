@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programma Concerto di Natale - Hermann Ensemble</title>
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --text: #222222;
+      --accent: #7a1c1c;
+      --muted: #555555;
+      --border: #e0dcd3;
+    }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 32px 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    h1, h2 {
+      color: var(--accent);
+      text-align: center;
+      letter-spacing: 0.05em;
+      font-weight: normal;
+    }
+    h1 { font-size: 1.8rem; margin-bottom: 0.2em; }
+    h2 { font-size: 1.3rem; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .programma { list-style: none; padding: 0; }
+    .programma li { margin-bottom: 18px; }
+    .autore { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); display: block; }
+    .brano { font-size: 1.1rem; font-weight: bold; }
+    .note-brano { font-size: 0.9rem; font-style: italic; color: var(--muted); display: block; }
+    .bio { font-size: 0.95rem; text-align: justify; margin-top: 16px; }
+    .organico { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 20px; }
+    .sezione h3 { font-size: 0.85rem; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .sezione p { margin: 0; font-size: 0.95rem; }
+    .btn-pdf {
+      display: block;
+      width: fit-content;
+      margin: 28px auto 0;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: sans-serif;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>PROGRAMMA</h1>
+    <ul class="programma">
+      <li>
+        <span class="autore">Volodymyr Yakymets (1974*)</span>
+        <span class="brano">Precistaia diva</span>
+      </li>
+      <li>
+        <span class="autore">Gustav Holst (1874–1934)</span>
+        <span class="brano">Lullay my liking</span>
+      </li>
+      <li>
+        <span class="autore">Bruno Bettinelli (1913–2004)</span>
+        <span class="brano">Ninna nanna del bambin Gesù</span>
+        <span class="note-brano">da Tre canti popolari lombardi</span>
+      </li>
+      <li>
+        <span class="autore">Arr. Ernest Cervera (1891–1972)</span>
+        <span class="brano">El noi de la mare</span>
+      </li>
+      <li>
+        <span class="autore">Anonimo</span>
+        <span class="brano">Campanas de Belén</span>
+      </li>
+      <li>
+        <span class="autore">Girolamo Frescobaldi (1583–1648)</span>
+        <span class="brano">Hinno Ave Maris Stella</span>
+      </li>
+      <li>
+        <span class="autore">Arcangelo Corelli (1653–1713)</span>
+        <span class="brano">Pastorale</span>
+      </li>
+      <li>
+        <span class="autore">Domenico Zipoli (1688–1726)</span>
+        <span class="brano">Pastorale</span>
+      </li>
+      <li>
+        <span class="autore">Louis-Claude Daquin (1694–1772)</span>
+        <span class="brano">Noël Étranger sur les jeux d'anches sans tremblant en duo</span>
+      </li>
+      <li>
+        <span class="autore">Felix Mendelssohn (1809–1847), arr. David Willcocks (1919–2013)</span>
+        <span class="brano">Hark! The herald angels sing</span>
+      </li>
+    </ul>
+
+    <h2>HERMANN ENSEMBLE</h2>
+    <p class="bio">
+      <strong>Hermann Ensemble</strong> è un gruppo amatoriale comprensivo di ensemble vocale e organo. Nasce da giovani accomunati dalla passione per la musica e il canto corale, per alcuni anche oggetto di studio accademico. Le scelte artistiche di repertorio alternano soprattutto brani di tradizione popolare ad altri d'epoca rinascimentale e barocca; tuttavia, propongono anche opere d'autori moderni e contemporanei capaci di esprimere un legame vivo con le radici storiche della propria musica.
+    </p>
+
+    <div class="organico">
+      <div class="sezione">
+        <h3>Soprani</h3>
+        <p>Marta Arzeni<br>Rebecca Luoni<br>Noemi Erba</p>
+      </div>
+      <div class="sezione">
+        <h3>Contralti</h3>
+        <p>Giulia Pellicciotta<br>Beatrice Radice<br>Anna Tomatis</p>
+      </div>
+      <div class="sezione">
+        <h3>Tenori</h3>
+        <p>Alessandro Decursu<br>Giacomo Tessera<br>Matteo Trimarchi</p>
+      </div>
+      <div class="sezione">
+        <h3>Bassi</h3>
+        <p>Giovanni Arzeni<br>Pietro Bettega<br>Riccardo Saccone<br>Matteo Mammana</p>
+      </div>
+      <div class="sezione">
+        <h3>Organista</h3>
+        <p>Tommaso Ganci</p>
+      </div>
+      <div class="sezione">
+        <h3>Direttore</h3>
+        <p>Alessandro Villa</p>
+      </div>
+    </div>
+
+    <a href="Programma_Natale_26_corpo.pdf" class="btn-pdf" target="_blank">Scarica il programma in PDF</a>
+  </div>
+</body>
+</html>
