@@ -5,302 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programma Concerto di Natale - Hermann Ensemble</title>
   <style>
-    :root {
-      --bg: #faf8f5;
-      --text: #1f1f1f;
-      --accent: #7a1c1c;
-      --muted: #555555;
-      --border: #dcd6cb;
-    }
-
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-      margin: 0;
-      padding: 20px 14px;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 40px 36px;
-      border-radius: 6px;
-      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
-    }
-
-    h1 {
-      color: var(--accent);
-      text-align: center;
-      font-size: 1.75rem;
-      letter-spacing: 0.12em;
-      font-weight: normal;
-      margin: 0 0 36px 0;
-      text-transform: uppercase;
-    }
-
-    /* Lista Programma: ordine esatto dall'alto in basso con allineamento Sx / Dx / Centro */
-    .programma-lista {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html {
+      height: 100%;
+      background-color: #2b2b2b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       display: flex;
       flex-direction: column;
-      gap: 20px;
     }
-
-    .brano-item {
-      max-width: 65%;
-    }
-
-    .brano-coro {
-      align-self: flex-start;
-      text-align: left;
-    }
-
-    .brano-organo {
-      align-self: flex-end;
-      text-align: right;
-    }
-
-    .brano-insieme {
-      align-self: center;
-      text-align: center;
-      max-width: 85%;
-      margin-top: 16px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-
-    .autore {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .titolo {
-      font-size: 1.08rem;
-      font-weight: bold;
-      display: block;
-    }
-
-    .sottotitolo {
+    .top-bar {
+      background: #1a1a1a;
+      color: #ffffff;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 0.9rem;
-      font-style: italic;
-      color: var(--muted);
-      display: block;
-      margin-top: 2px;
     }
-
-    /* Separatore tra le due pagine del PDF */
-    hr.section-divider {
-      border: 0;
-      border-top: 1px solid var(--border);
-      margin: 44px 0;
-    }
-
-    /* Sezione Ensemble */
-    .bio {
-      font-size: 0.96rem;
-      text-align: justify;
-      margin: 0 0 32px 0;
-    }
-
-    .bio strong {
-      letter-spacing: 0.04em;
-    }
-
-    /* Organico: ordine identico alla pagina 2 del PDF, separato tra Voci e Organista/Direttore */
-    .organico-wrapper {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 32px;
-      align-items: start;
-    }
-
-    .voci-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px 20px;
-    }
-
-    .guida-colonna {
-      border-left: 1px solid var(--border);
-      padding-left: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .ruolo h3 {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin: 0 0 6px 0;
-      font-weight: bold;
-    }
-
-    .ruolo p {
-      margin: 0;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .btn-pdf {
-      display: block;
-      width: fit-content;
-      margin: 40px auto 0;
-      padding: 10px 22px;
-      background-color: var(--accent);
+    .btn-download {
+      background: #7a1c1c;
       color: #ffffff;
       text-decoration: none;
+      padding: 6px 14px;
       border-radius: 4px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 0.88rem;
-      letter-spacing: 0.02em;
+      font-weight: 500;
     }
-
-    .btn-pdf:hover {
-      opacity: 0.92;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 28px 20px;
-      }
-
-      .brano-item {
-        max-width: 85%;
-      }
-
-      .brano-insieme {
-        max-width: 100%;
-      }
-
-      .organico-wrapper {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .guida-colonna {
-        border-left: none;
-        border-top: 1px solid var(--border);
-        padding-left: 0;
-        padding-top: 24px;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .guida-colonna .ruolo {
-        flex: 1;
-      }
+    iframe {
+      flex: 1;
+      width: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>PROGRAMMA</h1>
-
-    <div class="programma-lista">
-      <div class="brano-item brano-coro">
-        <span class="autore">VLODYMYR YAKYMETS (1974*)</span>
-        <span class="titolo">Precistaia diva</span>
-      </div>
-
-      <div class="brano-item brano-coro">
-        <span class="autore">GUSTAV HOLST (1874-1934)</span>
-        <span class="titolo">Lullay my liking</span>
-      </div>
-
-      <div class="brano-item brano-coro">
-        <span class="autore">BRUNO BETTINELLI (1913-2004)</span>
-        <span class="titolo">Ninna nanna del bambin Gesù</span>
-        <span class="sottotitolo">da Tre canti popolari lombardi</span>
-      </div>
-
-      <div class="brano-item brano-coro">
-        <span class="autore">Arr. ERNEST CERVERA (1891-1972)</span>
-        <span class="titolo">El noi de la mare</span>
-      </div>
-
-      <div class="brano-item brano-coro">
-        <span class="autore">ANONIMO</span>
-        <span class="titolo">Campanas de Belèn</span>
-      </div>
-
-      <div class="brano-item brano-organo">
-        <span class="autore">GIROLAMO FRESCOBALDI (1583-1648)</span>
-        <span class="titolo">Hinno Ave Maris Stella</span>
-      </div>
-
-      <div class="brano-item brano-organo">
-        <span class="autore">ARCANGELO CORELLI (1653-1713)</span>
-        <span class="titolo">Pastorale</span>
-      </div>
-
-      <div class="brano-item brano-organo">
-        <span class="autore">DOMENICO ZIPOLI (1688)</span>
-        <span class="titolo">Pastorale</span>
-      </div>
-
-      <div class="brano-item brano-organo">
-        <span class="autore">LOUIS-CLAUDE DAQUIN (1694-1772)</span>
-        <span class="titolo">Noel Etranger sur les jeaux d'anches sans tremblant en duo</span>
-      </div>
-
-      <div class="brano-item brano-insieme">
-        <span class="autore">FELIX MENDELSSOHN (1809-1847), arr. DAVID WILLCOCKS (1919-2013)</span>
-        <span class="titolo">Hark! The herald angels sing</span>
-      </div>
-    </div>
-
-    <hr class="section-divider">
-
-    <p class="bio">
-      <strong>HERMANN ENSEMBLE</strong> è un gruppo amatoriale comprensivo di ensemble vocale e organo. Nasce da giovani accomunati dalla passione per la musica e il canto corale, per alcuni anche oggetto di studio accademico.<br>
-      Le scelte artistiche di repertorio alternano soprattutto brani di tradizione popolare ad altri d'epoca rinascimentale e barocca; tuttavia, propongono anche opere d'autori moderni e contemporanei capaci di esprimere un legame vivo con le radici storiche della propria musica.
-    </p>
-
-    <div class="organico-wrapper">
-      <div class="voci-grid">
-        <div class="ruolo">
-          <h3>SOPRANI</h3>
-          <p>Marta Arzeni<br>Rebecca Luoni<br>Noemi Erba</p>
-        </div>
-
-        <div class="ruolo">
-          <h3>CONTRALTI</h3>
-          <p>Giulia Pellicciotta<br>Beatrice Radice<br>Anna Tomatis</p>
-        </div>
-
-        <div class="ruolo">
-          <h3>TENORI</h3>
-          <p>Alessandro Decursu<br>Giacomo Tessera<br>Matteo Trimarchi</p>
-        </div>
-
-        <div class="ruolo">
-          <h3>BASSI</h3>
-          <p>Giovanni Arzeni<br>Pietro Bettega<br>Riccardo Saccone<br>Matteo Mammana</p>
-        </div>
-      </div>
-
-      <div class="guida-colonna">
-        <div class="ruolo">
-          <h3>ORGANISTA</h3>
-          <p>Tommaso Ganci</p>
-        </div>
-
-        <div class="ruolo">
-          <h3>DIRETTORE</h3>
-          <p>Alessandro Villa</p>
-        </div>
-      </div>
-    </div>
-
-    <a href="Programma_Natale_26_corpo.pdf" class="btn-pdf" target="_blank">Scarica il programma in PDF</a>
+  <div class="top-bar">
+    <span>Hermann Ensemble – Programma</span>
+    <a href="Programma_Natale_26_corpo_2.pdf" class="btn-download" download>Scarica PDF</a>
   </div>
+  <iframe src="Programma_Natale_26_corpo_2.pdf"></iframe>
 </body>
 </html>
